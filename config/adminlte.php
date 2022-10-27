@@ -14,7 +14,7 @@ return [
     |
     */
 
-    'title' => 'AdminLTE 3',
+    'title' => 'Sistema Publicaciones',
     'title_prefix' => '',
     'title_postfix' => '',
 
@@ -63,7 +63,7 @@ return [
     |
     */
 
-    'logo' => '<b>Admin</b>LTE',
+    'logo' => '<b>Publicaciones</b>IDEX',
     'logo_img' => 'vendor/adminlte/dist/img/AdminLTELogo.png',
     'logo_img_class' => 'brand-image img-circle elevation-3',
     'logo_img_xl' => null,
@@ -291,34 +291,34 @@ return [
 
     'menu' => [
         // Navbar items:
-        [
+        /* [
             'type'         => 'navbar-search',
             'text'         => 'search',
             'topnav_right' => true,
-        ],
-        [
+        ], */
+        /* [
             'type'         => 'fullscreen-widget',
             'topnav_right' => true,
-        ],
+        ], */
 
         // Sidebar items:
-        [
+        /* [
             'type' => 'sidebar-menu-search',
             'text' => 'search',
-        ],
-        [
+        ], */
+        /* [
             'text' => 'blog',
             'url'  => 'admin/blog',
             'can'  => 'manage-blog',
-        ],
-        [
+        ], */
+        /* [
             'text'        => 'pages',
             'url'         => 'admin/pages',
             'icon'        => 'far fa-fw fa-file',
             'label'       => 4,
             'label_color' => 'success',
-        ],
-        ['header' => 'account_settings'],
+        ], */
+        /* ['header' => 'account_settings'],
         [
             'text' => 'profile',
             'url'  => 'admin/settings',
@@ -328,8 +328,41 @@ return [
             'text' => 'change_password',
             'url'  => 'admin/settings',
             'icon' => 'fas fa-fw fa-lock',
+        ], */
+        ['header'=>'Menu'],
+        [
+            'text'=>'Usuarios',
+            'icon'=>'fas fa-user',
+            'submenu'=>[
+                [
+                    'text'=>'Lista',
+                    'icon'=>'fas fa-list',
+                    'url'=>'clientes'
+                ],
+                [
+                    'text'=>'Nuevo',
+                    'icon'=>'fas fa-folder-open',
+                    'url'=>'clientes/create'
+                ]
+            ],
         ],
         [
+            'text'=>'Publicaciones',
+            'icon'=>'fas fa-newspaper',
+            'submenu'=>[
+                [
+                    'text'=>'Lista',
+                    'icon'=>'fas fa-list',
+                    'url'=>'publicaciones/create'
+                ],
+                [
+                    'text'=>'Nuevo',
+                    'icon'=>'fas fa-folder-open',
+                    'url'=>'publicaciones'
+                ]
+            ],
+        ],
+        /* [
             'text'    => 'multilevel',
             'icon'    => 'fas fa-fw fa-share',
             'submenu' => [
@@ -366,8 +399,8 @@ return [
                     'url'  => '#',
                 ],
             ],
-        ],
-        ['header' => 'labels'],
+        ], */
+        /* ['header' => 'labels'],
         [
             'text'       => 'important',
             'icon_color' => 'red',
@@ -382,7 +415,7 @@ return [
             'text'       => 'information',
             'icon_color' => 'cyan',
             'url'        => '#',
-        ],
+        ], */
     ],
 
     /*
