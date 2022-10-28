@@ -1,6 +1,9 @@
-@extends('layouts.base')
-@section('titulo', 'lista de usuarios')
-@section('cuerpo')
+@extends('adminlte::page')
+@section('title','Lista de publicaciones')
+@section('content_header')
+<h1>Lista de Usuarios</h1>
+@stop
+@section('content')
 <table>
     <tr>
         <th>nombre</th>

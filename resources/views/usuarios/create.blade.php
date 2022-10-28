@@ -1,6 +1,9 @@
-@extends('layouts.base')
-@section('cuerpo')
+@extends('adminlte::page')
+@section('title','Lista de publicaciones')
+@section('content_header')
 <h1>Nuevo Usuario</h1>
+@stop
+@section('content')
 <form action="{{ asset('usuarios') }}" method="post">
     @csrf
     <label for="nombre">nombre</label>
