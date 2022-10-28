@@ -337,12 +337,12 @@ return [
                 [
                     'text'=>'Lista',
                     'icon'=>'fas fa-list',
-                    'url'=>'clientes'
+                    'url'=>'usuarios'
                 ],
                 [
                     'text'=>'Nuevo',
                     'icon'=>'fas fa-folder-open',
-                    'url'=>'clientes/create'
+                    'url'=>'usuarios/create'
                 ]
             ],
         ],
@@ -353,12 +353,12 @@ return [
                 [
                     'text'=>'Lista',
                     'icon'=>'fas fa-list',
-                    'url'=>'publicaciones/create'
+                    'url'=>'publicaciones'
                 ],
                 [
                     'text'=>'Nuevo',
                     'icon'=>'fas fa-folder-open',
-                    'url'=>'publicaciones'
+                    'url'=>'publicaciones/create'
                 ]
             ],
         ],

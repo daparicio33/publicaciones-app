@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UsuarioController;
 use App\Http\Controllers\PublicacioneController;
 use App\Http\Controllers\ComentarioController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,8 +25,6 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-Route::get('/', [InicioController::class, 'index']);
-
 /* Rutas de usuarios */
 
 Route::get('usuarios/', [UsuarioController::class, 'index']);
@@ -38,7 +37,7 @@ Route::delete('usuarios/{id}', [UsuarioController::class, 'delete']);
 /* Rutas de publicaciones */
 
 Route::get('publicaciones/', [PublicacioneController::class, 'index']);
-Route::get('publicaciones/create', PublicacioneController::class, 'create');
+Route::get('publicaciones/create',[ PublicacioneController::class, 'create']);
 Route::post('publicaciones/', [PublicacioneController::class, 'store']);
 Route::get('publicaciones/{id}/edit', [PublicacioneController::class, 'edit']);
 Route::put('publicaciones/{id}', [PublicacioneController::class, 'update']);
