@@ -15,7 +15,7 @@
                 <input class="form-control" type="text" name="email">
                 <label for="dni">DNI</label>
                 <input class="form-control" type="text" name="dni">
-                <button class="btn btn-summit" type="submit">Enviar</button>
+                <button class="btn btn-primary" type="submit">Enviar</button>
             </div>
         </div>
     </div>
