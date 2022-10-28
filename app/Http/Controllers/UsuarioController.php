@@ -11,8 +11,8 @@ class UsuarioController extends Controller
     //
 
     public function index(){
-        $usuarios = Usuario::class;
-        return view('usuarios', compact('usuarios'));
+        $usuarios = Usuario::all();
+        return view('usuarios.index', compact('usuarios'));
     }
 
     public function create(){

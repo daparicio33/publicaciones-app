@@ -23,8 +23,6 @@
                 <input type="text" name="imagen"class="form-control">
                 <label for="">Fecha</label>
                 <input type="date" name="fecha"class="form-control">
-                <label for="">Comentario</label>
-                <input type="text" name="comentario"class="form-control">
                 <label for="">Nombre de usuario</label>   
                 <select name="usuario_id" class="form-control">
                     @foreach ($usuarios as $usuario)
