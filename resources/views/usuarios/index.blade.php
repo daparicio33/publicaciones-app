@@ -15,7 +15,7 @@
         <tr>
             <td>{{ $usuario->nombre }}</td>
             <td>{{ $usuario->email }}</td>
-            <td>{{ $usuario->DNI }}</td>
+            <td>{{ $usuario->dni }}</td>
             <td> 
                 <a href="{{ asset('usuarios/'.$usuario->id.'/edit')}}" class="btn btn-info">
                     editar
