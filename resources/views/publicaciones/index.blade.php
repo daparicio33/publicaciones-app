@@ -12,10 +12,7 @@
 
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row g-0">
-            <div class="col-md-2">
-                <img src="{{ asset('vendor/adminlte/dist/img/AdminLTELogo.png') }}" class="img-fluid rounded mx-auto d-block" alt="...">
-            </div>
-            <div class="col-md-10">
+            <div class="col-md-12">
                 <div class="responsive-table">
                     <table class="table">
                         <tr>
@@ -37,13 +34,14 @@
                                 </td>
                                 <td>
                                     <a onClick="mostrar({{ $publicacione->id }})" class="btn btn-outline-danger">Eliminar</a>
-                                    <div id="contenedor{{ $publicacione->id }}" style="display: none">
-                                        <form action="{{ asset('publicaciones/'.$publicacione->id) }}" method="post">
+                                    <div id="contenedor{{ $publicacione->id }}" style="display: none" class="mt-2">
+                                        <form action="{{ asset('publicaciones/'.$publicacione->id) }}" method="post" style="display: flex" >
                                             @csrf
                                             @method('delete')
                                             <button type="submit" class="btn btn-outline-danger">Si</button>
+                                            <a onclick="ocultar({{ $publicacione->id }})" class="btn btn-outline-primary mx-1">No</a>
                                         </form>
-                                        <a onclick="ocultar({{ $publicacione->id }})" class="btn btn-outline-primary">No</a>
+                                        
                                     </div>
                                 </td>
                             </tr>

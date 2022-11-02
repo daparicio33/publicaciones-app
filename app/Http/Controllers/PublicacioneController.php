@@ -24,7 +24,6 @@ class PublicacioneController extends Controller
         $publicacione->descripcion =$request->descripcion;
         $publicacione->imagen =$request->imagen;
         $publicacione->fecha =$request->fecha;
-        $publicacione->comentario =$request->comentario;
         $publicacione->usuario_id =$request->usuario_id;
         $publicacione->save();
         return Redirect::to('publicaciones');
@@ -40,7 +39,6 @@ class PublicacioneController extends Controller
         $publicacione->descripcion =$request->descripcion;
         $publicacione->imagen =$request->imagen;
         $publicacione->fecha =$request->fecha;
-        $publicacione->comentario =$request->comentario;
         $publicacione->usuario_id =$request->usuario_id;
         $publicacione->update();
         return Redirect::to('publicaciones');

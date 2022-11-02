@@ -9,6 +9,7 @@
 @section('content')
     <p>Aca ponemos las publicaciones del sistema.</p>
     {{-- inicio de la publicacion --}}
+    @foreach ($publicaciones as $publicacione)
     <div class="card mb-3" style="max-width: 100%;">
         <div class="row g-0">
           <div class="col-md-3">
@@ -16,48 +17,47 @@
           </div>
           <div class="col-md-9">
             <div class="card-header">
-                <h5 class="card-title">Publicacion 1</h5>
+                <h5 class="card-title">{{ $publicacione->titulo }}</h5>
             </div>
             <div class="card-body">
-              
-                <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer. This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
-                <p class="card-text"><small class="text-muted">Nombre de Autor</small></p>
+                <p class="card-text">
+                    {{ $publicacione->descripcion }}
+                </p>
+                <p class="card-text"><small class="text-muted">{{ $publicacione->usuario->nombre }}</small></p>
+                
                 <h6>Comentarios</h6>
-                <div class="card">
-                    <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">05-08-2022</h6>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
+                @foreach ($publicacione->comentarios as $comentario)
+                    <div class="card">
+                        <div class="card-body">
+                        <h6 class="card-subtitle mb-2 text-muted">{{ $comentario->fecha }}</h6>
+                        <small>Calificacion {{ $comentario->calificacion }}</small>
+                        <p class="card-text">
+                            {{ $comentario->comentario }}
                         </p>
+                        </div>
                     </div>
-                </div>
-                <div class="card">
-                    <div class="card-body">
-                    <h6 class="card-subtitle mb-2 text-muted">05-08-2022</h6>
-                    <p class="card-text">
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        Some quick example text to build on the card title and make up the bulk of the card's content.
-                        </p>
-                    </div>
-                </div>
+                @endforeach
                 <h6>Nuevo Comentario</h6>
-                <div class="card">
-                    <div class="card-body">
-                        <textarea name="" id="" rows="5" class="form-control"></textarea>
+                <form action="{{ asset('comentarios/') }}" method="post">
+                    @csrf
+                    <input type="hidden" name="publicacione_id" value="{{ $publicacione->id }}">
+                    <div class="card">
+                        <div class="card-body">
+                            <textarea name="comentario" rows="5" class="form-control"></textarea>
+                        </div>
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary">
+                                <i class="fas fa-file-export"></i> Enviar
+                            </button>
+                        </div>
                     </div>
-                    <div class="card-footer">
-                        <button type="submit" class="btn btn-primary">
-                            <i class="fas fa-file-export"></i> Enviar
-                        </button>
-                    </div>
-                </div>
+                </form>
             </div>
           </div>
         </div>
     </div>
+    @endforeach
+    
     {{-- fin de publicacion --}}
 @stop
 
