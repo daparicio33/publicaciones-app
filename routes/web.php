@@ -17,18 +17,21 @@ use Illuminate\Support\Facades\Auth;
 |
 */
 
-Route::get('/', function () {
+/* Route::get('/', function () {
     return view('welcome');
 });
-
+ */
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])
+->name('home');
 
 /* Rutas de usuarios */
 
-Route::get('usuarios/', [UsuarioController::class, 'index']);
-Route::get('usuarios/create', [UsuarioController::class, 'create']);
+Route::get('usuarios/', [UsuarioController::class, 'index'])
+->name('usuarios.index');
+Route::get('usuarios/create', [UsuarioController::class, 'create'])
+->name('usuarios.create');
 Route::post('usuarios/', [UsuarioController::class, 'store']);
 Route::get('usuarios/{id}/edit', [UsuarioController::class, 'edit']);
 Route::put('usuarios/{id}', [UsuarioController::class, 'update']);
